@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+ <welcome-file-list>
+<welcome-file>welcome.jsp</welcome-file>
+<welcome-file>index.jsp</welcome-file>
+<welcome-file>login.jsp</welcome-file>
+<welcome-file>login_failed.jsp</welcome-file>
+<welcome-file>dashboard.jsp</welcome-file>
+<welcome-file>register_failed.jsp</welcome-file>
+<welcome-file>register_success.jsp</welcome-file>
+<welcome-file>search_book.jsp</welcome-file>
+<welcome-file>view_books.jsp</welcome-file>
+<welcome-file>error.jsp</welcome-file>
+</welcome-file-list>
+
+<servlet>
+    <servlet-name>ViewBookServlet</servlet-name>
+    <servlet-class>com.ab.Controllers.ViewBookServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ViewBookServlet</servlet-name>
+    <url-pattern>/online-book-store-application/ViewBookServlet</url-pattern>
+</servlet-mapping>
+  <error-page>
+  <error-code>500 </error-code>
+  <location>/error.jsp</location>
+  </error-page>
+  
+</web-app>
