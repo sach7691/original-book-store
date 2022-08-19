@@ -1,7 +1,6 @@
 package com.ab.Controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ab.daos.BasketDAO;
-import com.ab.models.Book;
+import com.ab.models.Basket;
 import com.ab.services.BasketService;
 import com.ab.utilities.BSFactory;
 
@@ -39,16 +38,8 @@ public class BasketViewServlet extends HttpServlet {
 		    BasketDAO dao = BSFactory.getBasketDAO();
 			BasketService basketService = BSFactory.getBasketService(dao);
 	             
-			String book = request.getParameter("books"); //retrieve booktitle in hidden text box 
-			//Book addBook = basketService.addBook(book);
-						
-			List<String> bList = new ArrayList<>();
-			
-			for(String b: bList) {
-				
-				bList.add(book);
-			}
-						
+			List<Basket> bList = basketService.viewBasket();
+												
 			//created a session
 			HttpSession session =request.getSession(true);
 			session.setAttribute("bList", bList);

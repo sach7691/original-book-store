@@ -69,7 +69,7 @@ ul.topnav li.right {float: right;}
 <%
 Book books = (Book)session.getAttribute("readBook");
 String title = books.getBookTitle();
-session.setAttribute("title", title);
+//session.setAttribute("title", title);
 //System.out.println(books);
 %> 
 <div class="letter"><h1>WELCOME TO READ A BOOK</h1></div>
@@ -89,7 +89,7 @@ session.setAttribute("title", title);
        <td><%= books.getBookPrice() %></td>
        <td><%= books.getQuantity() %></td>     
        <td> <form action="http://localhost:8080/online-book-store-application/BasketAddServlet" method="POST"> 
-        <input type="text" value="<%= title %>"  />
+        <input type="text" value="<%= title %>" name="books" hidden="" />
         <input type="submit" value="Add to Basket"/>
  </form>  
  </td>     

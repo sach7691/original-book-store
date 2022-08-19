@@ -1,6 +1,7 @@
 package com.ab.services;
 import java.util.List;
 import com.ab.daos.BasketDAO;
+import com.ab.models.Basket;
 import com.ab.models.Book;
 
 public class BasketServiceImpl implements BasketService {
@@ -14,15 +15,15 @@ public class BasketServiceImpl implements BasketService {
 	}
 
 	@Override
-	public Book addBook(String bookTitle) {
+	public Basket addBook(String bookTitle) {
 		
 		return this.basketDAO.addBook(bookTitle);
 	}
 
 	@Override
-	public List<Book> viewBasket() {
+	public List<Basket> viewBasket() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.basketDAO.viewBasket();
 	}
 
 	@Override

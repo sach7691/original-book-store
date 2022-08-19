@@ -1,8 +1,6 @@
 package com.ab.Controllers;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ab.daos.BasketDAO;
-import com.ab.models.Book;
+import com.ab.models.Basket;
 import com.ab.services.BasketService;
 import com.ab.utilities.BSFactory;
 
@@ -39,20 +37,16 @@ public class BasketAddServlet extends HttpServlet {
         BasketDAO dao = BSFactory.getBasketDAO();
 		BasketService basketService = BSFactory.getBasketService(dao);
              
-		String bTitle = request.getParameter("title"); //retrieve book obj in hidden text box 
+		String bTitle = request.getParameter("books"); //retrieve book obj in hidden text box 
 		
 		//String bTitle = (String) request.getAttribute("title");
 		
-		Book addBook = basketService.addBook(bTitle);
+		Basket addBook = basketService.addBook(bTitle);
 		
-		List<Book> bList = new ArrayList<>();
-		
-		bList.add(addBook);
-					
-		
+						
 		//created a session
 		HttpSession session =request.getSession(true);
-		session.setAttribute("bList", bList);
+		session.setAttribute("addBook", addBook);
 		response.sendRedirect("view_basket.jsp");
 	}
 

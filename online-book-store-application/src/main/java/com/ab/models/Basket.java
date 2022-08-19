@@ -1,60 +1,48 @@
 package com.ab.models;
-import java.util.List;
+
+
 public class Basket {
 	
 	private int basketId;
 	
-	private List<Book> books;
-	
-	private Customer customer;
+	private String  bookTitle;
 
-	private boolean checkoutStatus;
-
-	public Basket(int basketId, List<Book> books, Customer customer, boolean checkoutStatus) {
+	public Basket(int basketId, String bookTitle) {
 		super();
 		this.basketId = basketId;
-		this.books = books;
-		this.customer = customer;
-		this.checkoutStatus = checkoutStatus;
+		this.bookTitle = bookTitle;
 	}
-
-	public int getBasketId() {
-		return basketId;
+	
+	public Basket(String bookTitle) {
+		super();
+		this.bookTitle = bookTitle;
+	}
+	
+	public Basket() {
+		super();
+		
 	}
 
 	public void setBasketId(int basketId) {
 		this.basketId = basketId;
 	}
 
-	public List<Book> getBooks() {
-		return books;
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
 	}
 
-	public void setBooks(List<Book> books) {
-		this.books = books;
+	public int getBasketId() {
+		return basketId;
 	}
 
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
-	public boolean isCheckoutStatus() {
-		return checkoutStatus;
-	}
-
-	public void setCheckoutStatus(boolean checkoutStatus) {
-		this.checkoutStatus = checkoutStatus;
+	public String getBookTitle() {
+		return bookTitle;
 	}
 
 	@Override
 	public String toString() {
-		return "Basket [basketId=" + basketId + ", books=" + books + ", customer=" + customer + ", checkoutStatus="
-				+ checkoutStatus + "]";
+		return "Basket [basketId=" + basketId + ", bookTitle=" + bookTitle + "]";
 	}
-	
+		
 	
 }

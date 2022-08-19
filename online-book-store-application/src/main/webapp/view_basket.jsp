@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.List" %>
 <%@page import="com.ab.models.Book" %>
+<%@page import="com.ab.models.Basket" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,7 +68,8 @@ ul.topnav li.right {float: right;}
 </div>
 <form action="http://localhost:8080/online-book-store-application/BasketAddServlet"  method="GET">
 <%
-List<Book> b = (List<Book>)session.getAttribute("bList");
+Basket b =(Basket)session.getAttribute("addBook");
+String title = b.getBookTitle();
 
 //System.out.println(books);
 %> 
@@ -76,22 +78,12 @@ List<Book> b = (List<Book>)session.getAttribute("bList");
 <br>
 <table border="4" style="width:30%">
   <tr>
-    <th>ISBN</th>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Price</th>
-    <th>Quantity Available</th>
+    <th>Your Basket</th>
   </tr>
-   <c:forEach items="${bList}" var="b">
         <tr style = "text-align :center ">
-            <td><c:out value="${b.bookISBN}" /></td>
-            <td><c:out value="${b.bookTitle}" /></td>
-            <td><c:out value="${b.bookAuthor}" /></td>
-            <td><c:out value="${b.bookPrice}" /></td>
-            <td><c:out value="${b.quantity}" /></td>           
+            <td><a><%=title%></a></td>
+      </tr>    
  </form>
- </tr>
-    </c:forEach>
 </table>
 <br>
 </center>
