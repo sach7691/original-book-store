@@ -1,0 +1,6 @@
+127.0.0.1 - - [23/Aug/2022:11:52:44 +0100] "GET /DevMgmt/ProductConfigDyn.xml HTTP/1.1" 404 783
+127.0.0.1 - - [23/Aug/2022:11:52:44 +0100] "GET /DevMgmt/ProductConfigDyn.xml HTTP/1.1" 404 783
+127.0.0.1 - - [23/Aug/2022:11:52:45 +0100] "GET /DevMgmt/DiscoveryTree.xml HTTP/1.1" 404 780
+127.0.0.1 - - [23/Aug/2022:11:52:45 +0100] "GET /DevMgmt/DiscoveryTree.xml HTTP/1.1" 404 780
+127.0.0.1 - - [23/Aug/2022:17:19:35 +0100] "GET /DevMgmt/ProductConfigDyn.xml HTTP/1.1" 404 783
+127.0.0.1 - - [23/Aug/2022:17:19:35 +0100] "GET /DevMgmt/DiscoveryTree.xml HTTP/1.1" 404 780

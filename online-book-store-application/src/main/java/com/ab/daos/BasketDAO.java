@@ -5,9 +5,9 @@ import com.ab.models.Book;
 
 public interface BasketDAO {
 	
-	public Basket addBook(String bookTitle); //check isbn is already in the store
+	public Basket addBook(String bookTitle); 
 	public List<Basket> viewBasket();
-	public Book modifyBasket(int bookISBN);
+	public Basket modifyBasket(String bookTitle);
 	public boolean checkout(boolean status);
 
 }

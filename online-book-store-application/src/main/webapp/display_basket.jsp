@@ -62,6 +62,7 @@ ul.topnav li.right {float: right;}
   <li><a href="http://localhost:8080/online-book-store-application/ViewBookServlet">View Available Books</a></li>
   <li><a href="search_book.jsp">Search Books</a></li>
   <li><a href="http://localhost:8080/online-book-store-application/BasketViewServlet">View Basket</a></li>
+   <li><a href="login.jsp">Checkout</a></li>
   <li class="right"><a href="login.jsp">Login</a></li>
   <li class="right"><a href="index.jsp">Sign Up</a></li> 
 </ul>
@@ -73,6 +74,7 @@ List<Basket> b = (List<Basket>)session.getAttribute("bList");
 
 //System.out.println(books);
 %> 
+</form>
 <div class="letter"><h1>WELCOME TO VIEW THE BASKET</h1></div>
 <center>
 <br>
@@ -81,11 +83,16 @@ List<Basket> b = (List<Basket>)session.getAttribute("bList");
     <th>Available books in the Basket</th>
   </tr>
    <c:forEach items="${bList}" var="b">
-        <tr style = "text-align :center ">
-            <td><c:out value="${b.bookTitle}" /></td>        
- </form>
+   <tr style = "text-align :center ">
+       <td><c:out value="${b.bookTitle}" /></td>          
+       <td>
+            <form action="http://localhost:8080/online-book-store-application/BasketDeleteServlet" method="GET"> 
+            <input type="text" value="${b.bookTitle}" name="bookTitle" hidden=""/>
+            <input type="submit" value="Delete Book"/>
+            </form>  
+       </td>       
  </tr>
-    </c:forEach>
+ </c:forEach>      
 </table>
 <br>
 </center>

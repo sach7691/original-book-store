@@ -29,6 +29,11 @@ body
   background: rgba(0, 128, 0, 0.3);
   
 }
+ letter {
+   color: #ea503f;
+   font-family: Arial;
+   float: center;
+ }
 
 ul.topnav {
   list-style-type: none;
@@ -64,14 +69,27 @@ ul.topnav li.right {float: right;}
 <form action="http://localhost:8080/online-book-store-application/LogoutCustomerServlet" method="GET">
 <div>
 <ul class="topnav">
-  <li><a class="active" href="">View Order History</a></li>
+  <li><a class="active" href="welcome.jsp">Home</a></li>
+    <li><a href="http://localhost:8080/online-book-store-application/ViewBookServlet">View Available Books</a></li>
+  <li><a href="search_book.jsp">Search Books</a></li>
+  <li><a href="http://localhost:8080/online-book-store-application/BasketViewServlet">View Basket</a></li>
+   <li><a href="login.jsp">Checkout</a></li>
+  <li><a  href="">View Order History</a></li>
   <li><a href="">View Personal Account Details</a></li>
   <li><a href="">Modify Account Details</a></li>
   <li><a href="">Purchase Book</a></li>
-  <li class="right"><a>Welcome ${email} </a></li>
-  <li class="right"><a href="login.jsp">Logout</a></li> 
-</ul>	
-</div>				
+  <li class="right"><a href="login.jsp">Logout</a></li>  
+</ul>
+<br>
+<br>
+<br>
+<br>	
+</div>
+<center>
+<div>	
+<p style="color: red;"><h1>Welcome ${email} !!!</h1></p>	
+</div>	
+</center>
 </form>		
 					
 </body>

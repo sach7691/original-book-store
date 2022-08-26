@@ -27,9 +27,9 @@ public class BasketServiceImpl implements BasketService {
 	}
 
 	@Override
-	public Book modifyBasket(int bookISBN) {
+	public Basket modifyBasket(String bookTitle) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.basketDAO.modifyBasket(bookTitle);
 	}
 
 	@Override
