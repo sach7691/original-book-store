@@ -70,14 +70,6 @@ ul.topnav li.right {float: right;}
 <div>
 <ul class="topnav">
   <li><a class="active" href="welcome.jsp">Home</a></li>
-    <li><a href="http://localhost:8080/online-book-store-application/ViewBookServlet">View Available Books</a></li>
-  <li><a href="search_book.jsp">Search Books</a></li>
-  <li><a href="http://localhost:8080/online-book-store-application/BasketViewServlet">View Basket</a></li>
-   <li><a href="login.jsp">Checkout</a></li>
-  <li><a  href="">View Order History</a></li>
-  <li><a href="">View Personal Account Details</a></li>
-  <li><a href="">Modify Account Details</a></li>
-  <li><a href="">Purchase Book</a></li>
   <li class="right"><a href="login.jsp">Logout</a></li>  
 </ul>
 <br>
@@ -85,12 +77,44 @@ ul.topnav li.right {float: right;}
 <br>
 <br>	
 </div>
+</form>	
+<form action="http://localhost:8080/online-book-store-application/AccountDetailsServlet"  method="GET">
+
+<%
+
+session.getAttribute("email");
+session.getAttribute("modifyCustomer");
+
+%>
 <center>
 <div>	
 <p style="color: red;"><h1>Welcome ${email} !!!</h1></p>	
 </div>	
-</center>
-</form>		
-					
+
+ <input type="text" id="email" name="email" value= "${email}" hidden="" >
+        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <!-- Heroicon name: solid/lock-closed -->
+            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="green" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          View Information
+        </button>
+ </form>
+ <br>
+  <br>
+ <form action="http://localhost:8080/online-book-store-application/ModifyCustomerServlet"  method="POST">
+  <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <!-- Heroicon name: solid/lock-closed -->
+            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="green" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          Modify Accounts 
+        </button>
+ </form>
+</center>						
 </body>
 </html>

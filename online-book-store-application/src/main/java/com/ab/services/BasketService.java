@@ -5,7 +5,8 @@ import com.ab.models.Book;
 
 public interface BasketService {
 	
-	public Basket addBook(String bookTitle); //check isbn is already in the store
+	public Basket basketAdd(String bookTitle);
+	public Basket addBook(String bookTitle); //problem
 	public List<Basket> viewBasket();
 	public Basket modifyBasket(String bookTitle);
 	public boolean checkout(boolean status);

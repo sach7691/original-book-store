@@ -1,0 +1,13 @@
+package com.ab.daos;
+import java.util.List;
+import com.ab.models.Basket;
+import com.ab.models.Book;
+
+public interface BasketDAO {
+	
+	public Basket addBook(Book book); 
+	public List<Basket> viewBasket();
+	public Basket modifyBasket(String bookTitle);
+	public boolean checkout(boolean status);
+
+}

@@ -62,6 +62,7 @@ ul.topnav li.right {float: right;}
   <li><a href="view_books.jsp">View Available Books</a></li>
   <li><a href="search_book.jsp">Search Books</a></li>
   <li><a href="http://localhost:8080/online-book-store-application/BasketAddServlet">View Basket</a></li>
+  <li><a href="login.jsp">Checkout</a></li>
   <li class="right"><a href="login.jsp">Login</a></li>
   <li class="right"><a href="index.jsp">Sign Up</a></li>
   

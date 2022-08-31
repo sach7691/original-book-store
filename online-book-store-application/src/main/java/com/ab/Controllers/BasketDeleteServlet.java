@@ -14,6 +14,7 @@ import com.ab.daos.BasketDAO;
 import com.ab.models.Basket;
 import com.ab.services.BasketService;
 import com.ab.utilities.BSFactory;
+import com.ab.utilities.DataValidation;
 
 /**
  * Servlet implementation class BasketDeleteServlet
@@ -41,8 +42,10 @@ public class BasketDeleteServlet extends HttpServlet {
 		
 		String bTitle = request.getParameter("bookTitle");
 		
-		basketService.modifyBasket(bTitle);
+		DataValidation.restoreQty(bTitle);
 		
+		basketService.modifyBasket(bTitle);
+				
 		List<Basket> bList = basketService.viewBasket();
 		
 		//created a session

@@ -10,10 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ab.daos.BasketDAO;
+import com.ab.daos.BookDAO;
 import com.ab.models.Basket;
 import com.ab.models.Book;
 import com.ab.services.BasketService;
+import com.ab.services.BookService;
 import com.ab.utilities.BSFactory;
+import com.ab.utilities.DataValidation;
 
 /**
  * Servlet implementation class BasketAddServlet
@@ -35,15 +38,15 @@ public class BasketAddServlet extends HttpServlet {
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        BasketDAO dao = BSFactory.getBasketDAO();
+        BasketDAO dao = BSFactory.getBasketDAO();        
 		BasketService basketService = BSFactory.getBasketService(dao);
-             
+		            
 		String bTitle = request.getParameter("books"); //retrieve book obj in hidden text box 
-		
-		//String bTitle = (String) request.getAttribute("title");
 				
-		Basket addBook = basketService.addBook(bTitle);
-								
+		Basket addBook = basketService.basketAdd(bTitle);
+				
+	    DataValidation.decreaseQty(bTitle);
+										
 		//created a session
 		HttpSession session =request.getSession(true);
 		session.setAttribute("addBook", addBook);

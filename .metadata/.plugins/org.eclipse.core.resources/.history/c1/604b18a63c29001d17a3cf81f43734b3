@@ -1,0 +1,19 @@
+package com.ab.services;
+
+import com.ab.models.Customer;
+
+public class AccountServiceImpl implements AccountService {
+
+	@Override
+	public Customer viewAccountDetails(String customerEmail) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Customer modifyAccountDetails(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -35,6 +35,15 @@ public class Customer {
 		this.customerPassword = customerPassword;
 	}
 
+	
+	public Customer(int customerId, String firstName, String lastName, String customerEmail) {
+		super();
+		this.customerId = customerId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.customerEmail = customerEmail;
+	}
+
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}

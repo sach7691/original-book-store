@@ -51,7 +51,12 @@ public class Book {
 		this.bookTitle = bookTitle;
 		
 	}
-	
+
+	public Book(String bookTitle, int quantity) {
+		super();
+		this.bookTitle = bookTitle;
+		this.quantity = quantity;
+	}
 
 	public int getBookISBN() {
 		return bookISBN;

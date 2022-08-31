@@ -18,6 +18,7 @@ public class BookDatabaseDAOImpl implements BookDAO {
 	
 	private ResultSet rs;
 	
+	
 	@Override
 	public List<Book> viewBooks() {
 

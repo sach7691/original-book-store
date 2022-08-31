@@ -6,8 +6,9 @@ import com.ab.models.Book;
 public interface BasketDAO {
 	
 	public Basket addBook(String bookTitle); 
+	public Basket basketAdd(String bookTitle);
 	public List<Basket> viewBasket();
 	public Basket modifyBasket(String bookTitle);
-	public boolean checkout(boolean status);
+	public List<Book> checkout(List<Basket> basket);
 
 }

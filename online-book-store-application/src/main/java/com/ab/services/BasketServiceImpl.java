@@ -15,6 +15,11 @@ public class BasketServiceImpl implements BasketService {
 	}
 
 	@Override
+	public Basket basketAdd(String bookTitle) {
+		
+		return this.basketDAO.basketAdd(bookTitle);
+	}
+	@Override
 	public Basket addBook(String bookTitle) {
 		
 		return this.basketDAO.addBook(bookTitle);

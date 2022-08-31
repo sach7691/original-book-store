@@ -62,26 +62,31 @@ ul.topnav li.right {float: right;}
   <li><a href="http://localhost:8080/online-book-store-application/ViewBookServlet">View Available Books</a></li>
   <li><a href="search_book.jsp">Search Books</a></li>
   <li><a href="http://localhost:8080/online-book-store-application/BasketViewServlet">View Basket</a></li>
+  <li><a href="login.jsp">Checkout</a></li>
   <li class="right"><a href="login.jsp">Login</a></li>
   <li class="right"><a href="index.jsp">Sign Up</a></li> 
 </ul>
 </div>
-<form action="http://localhost:8080/online-book-store-application/BasketAddServlet"  method="GET">
+<form action="http://localhost:8080/online-book-store-application/BasketViewServlet"  method="GET">
 <%
 Basket b =(Basket)session.getAttribute("addBook");
-String title = b.getBookTitle();
 
-//System.out.println(books);
 %> 
-<div class="letter"><h1>WELCOME TO ADD BASKET</h1></div>
+<div class="letter"><h1>Book Added to Basket</h1></div>
 <center>
 <br>
 <table border="4" style="width:30%">
   <tr>
-    <th>Your Basket</th>
+    <th>Title</th>
+    <th>$ Price</th>
   </tr>
         <tr style = "text-align :center ">
-            <td><a><%=title%></a></td>
+            <td><a><%=b.getBookTitle()%></a></td>
+            <td><a><%=b.getBookPrice()%></a></td>
+            <td> <form action="http://localhost:8080/online-book-store-application/BasketViewServlet" method="GET"> 
+            <input type="submit" value="View Basket"/>
+ </form>  
+ </td> 
       </tr>    
  </form>
 </table>

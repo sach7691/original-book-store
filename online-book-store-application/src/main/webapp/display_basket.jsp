@@ -80,11 +80,15 @@ List<Basket> b = (List<Basket>)session.getAttribute("bList");
 <br>
 <table border="4" style="width:30%">
   <tr>
-    <th>Available books in the Basket</th>
+    <th>Title</th>
+    <th>$ Price</th>
+    <th>Quantity</th>
   </tr>
    <c:forEach items="${bList}" var="b">
    <tr style = "text-align :center ">
-       <td><c:out value="${b.bookTitle}" /></td>          
+       <td><c:out value="${b.bookTitle}" /></td>   
+        <td><c:out value="${b.bookPrice}" /></td> 
+         <td><c:out value="${b.quantity}" /></td>        
        <td>
             <form action="http://localhost:8080/online-book-store-application/BasketDeleteServlet" method="GET"> 
             <input type="text" value="${b.bookTitle}" name="bookTitle" hidden=""/>
