@@ -75,6 +75,7 @@ ul.topnav li.right {float: right;}
 <br>
 <br>
 <br>
+<form>	
 </div>
 <center>
 <form action="http://localhost:8080/online-book-store-application/AccountDetailsServlet" method="GET">

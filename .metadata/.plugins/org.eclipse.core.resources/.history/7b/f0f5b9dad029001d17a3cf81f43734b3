@@ -12,7 +12,6 @@ import com.ab.models.Customer;
 import com.ab.services.AccountService;
 import com.ab.services.AccountServiceImpl;
 import com.ab.utilities.BSFactory;
-import com.ab.utilities.DataValidation;
 
 /**
  * Servlet implementation class ModifyCustomerServlet
@@ -34,15 +33,12 @@ public class ModifyCustomerServlet extends HttpServlet {
 	 */
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String customerEmail = request.getParameter("customerEmail");
 		String customerpassword = request.getParameter("customerpassword");
 		
-		String encryptedPassword = DataValidation.encryptPassword(customerpassword);
-		
-		Customer customer = BSFactory.getCustomer(firstName, lastName, customerEmail, encryptedPassword);
+		Customer customer = BSFactory.getCustomer(firstName, lastName, customerEmail, customerpassword);
 		
 		AccountDAO dao = new AccountDAOImpl();
 		
